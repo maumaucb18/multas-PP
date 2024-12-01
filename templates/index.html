@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pesquisa de Produtos Perigosos</title>
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+<body>
+    <h1>Pesquisar Produtos Perigosos</h1>
+    <form action="/search" method="get">
+        <label for="query">Digite o Código ONU ou Nome do Produto:</label>
+        <input id="query" name="query" type="text" style="text-transform:uppercase;" oninput="this.value = this.value.toUpperCase()" required>
+        <button type="submit">Buscar</button>
+    </form>
+    
+</body>
+</html>

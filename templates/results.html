@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultados da Pesquisa</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Resultados</h1>
+        <a href="/">Voltar</a>
+        {% if results %}
+            <div class="accordion-container">
+                {% for row in results %}
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <strong>Código ONU:</strong> {{ row['Codigo_ONU'] }}
+                        </div>
+                        <div class="accordion-content">
+                            <p><strong>Nome e Descrição:</strong> {{ row['Nome_Descricao'] }}</p>
+                            <p><strong>Classe/Subclasse de Risco:</strong> {{ row['Classe_Subclasse_Risco'] }}</p>
+                            <p><strong>Risco Subsidiário:</strong> {{ row['Risco_Subsidiario'] }}</p>
+                            <p><strong>Nº de Risco:</strong> {{ row['Numero_Risco'] }}</p>
+                            <p><strong>Grupo de Embalagem:</strong> {{ row['Grupo_Embalagem'] }}</p>
+                            
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>Nenhum resultado encontrado.</p>
+        {% endif %}
+    </div>
+
+    <script  src="static/script.js"></script>
+        
+</body>
+</html>
